@@ -18,4 +18,5 @@
     * Team Hector Mapping
     * Intel Edison
 
-Treffen: Freitags 10-12
+Treffen: Freitags 10-12  
+ROS version: Indigo
