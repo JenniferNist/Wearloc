@@ -5,7 +5,7 @@
 * Plan B:
     * Leistungsfähigeren Chip
 * Plan C:
-    * Daten per W-Lan weitersenden
+    * Daten per W-Lan weitersenden (ISP8266)
 
 * Offene Fragen:
     * Odometry
@@ -13,6 +13,7 @@
     * Stromversorgung/Verbrauch
     * Sensor Stabilisierung
     * Translation Sensor?
+    * 3D vs 2D SLAM
 
 * Zum Angucken:
     * Team Hector Mapping
