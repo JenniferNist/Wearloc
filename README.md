@@ -21,3 +21,5 @@
 
 Treffen: Freitags 10-12  
 ROS version: Indigo
+
+Backup raspberry pies von Lukas oder Andre
