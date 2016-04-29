@@ -5,7 +5,7 @@
 * Plan B:
     * Leistungsfähigeren Chip
 * Plan C:
-    * Daten per W-Lan weitersenden (ISP8266)
+    * Daten per W-Lan weitersenden (ESP8266)
 
 * Offene Fragen:
     * Odometry
