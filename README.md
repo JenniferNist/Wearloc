@@ -24,6 +24,6 @@ ROS version: Indigo
 
 Backup raspberry pies von Lukas oder Andre
 
-Verwendbare Laserscanner:
-[RPLIDAR 360° Laser Scanner](http://www.robotshop.com/eu/en/rplidar-360-laser-scanner.html)
+Verwendbare Laserscanner:  
+[RPLIDAR 360° Laser Scanner](http://www.robotshop.com/eu/en/rplidar-360-laser-scanner.html)  
 [Hokuyo URG-04LX Scanning Laser Rangefinder](http://www.robotshop.com/eu/en/hokuyo-urg-04lx-scanning-laser-rangefinder-eu.html)
