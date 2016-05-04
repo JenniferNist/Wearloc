@@ -1,2 +1,5 @@
+put rplidar.launch into /rplidar_ros/launch/rplidar.launch
+put wearloc.launch into /hector_slam/hector_slam_launch/launch/wearloc.launch
+
 Fix [rplidarNode-2] process has died error with
     sudo chmod 666 /dev/ttyUSB0
