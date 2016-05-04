@@ -1,0 +1,2 @@
+Fix [rplidarNode-2] process has died error with
+    sudo chmod 666 /dev/ttyUSB0
