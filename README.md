@@ -30,3 +30,4 @@ Verwendbare Laserscanner:
   
 Nützlich:  
 [ROS networking Tutorial](http://nootrix.com/software/ros-networking/)
+note: !export ROS_... commands in EVERY terminal window!
