@@ -1,0 +1,262 @@
+Links:
+
+1. Anleitung: http://www.emutexlabs.com/ubilinux/29-ubilinux/218-ubilinux-installation-instructions-for-intel-edison
+
+2. Anleitung: http://wiki.ros.org/wiki/edison
+
+3. https://github.com/catmaker/chippy/wiki/Ubilinux-Post-Installation
+
+4. http://unix.stackexchange.com/questions/40/use-wpa-supplicant-without-plain-text-passwords
+
+5. http://www.emutexlabs.com/forum/general-questions/6-how-to-resize-ubilinux-root-partition
+
+
+
+Benötigt: 
+
+* Intel Edison, 2 USB Kabel
+* Software: Ubilinux Distribution, 
+* Linux PC mit installiertem dfu-util
+
+
+Anleitung Teil 1:
+
+Go to the Emutex page and download the Ubilinux distrubtion: http://www.emutexlabs.com/ubilinux.
+
+1.Extract the content of ubilinux-edison-yymmdd.tar.gz into a directory on your host machine. 
+From the terminal tar xvfz ubilinux-edison-yymmdd.tar.gz
+Move to the "toFlash" folder, You should see the flashall.sh (or flashall.bat) script along with all the other files for the image.
+
+2. Power down the Edison. You may need to disconnect one of the USB cables.
+
+3. Run --> sudo flashall.sh <-- on the host machine.
+
+4. Connect the Edison to the host machine using the usb cables. If you are using an arduino baseboard, it is recommended that you also connect an external power supply shortly after connecting the USB cable.
+
+5. The flash process should now start, and you can see the progress on the host machine terminal. You can monitor the console output on the second USB connection, and also get a login console once the flashing process is complete.
+
+6. When the flashing process is complete, the Edison will reboot twice. The first time it sets up partitions, ssh keys, WiFi ssid, etc. The second time it will boot normally, and present a login prompt on the serial console.
+
+7. To connect to the serial console, use putty on windows or a terminal (linux or mac), changing the baudrate to 115200 and specify the serial port as recognised by your system.
+
+8. You can login providing the default credentials (username: root, password: edison).
+
+9. Ethernet over USB functionality is available, and the default IP of the Edison is 192.168.2.15
+
+10. nano /etc/hostname : In file ubilinux nach ubilinux1 bzw 2 umbenennen.
+
+11. nano /etc/hosts : In der ersten Zeile hinter localhosts ubilinux1/2 hinzufügen.
+
+11. In  nano /etc/network/interface folgendes ändern:
+    auto wlan0
+    allow-hotplug wlan0
+    iface wlan0 inet manual
+        wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf 
+        
+Die nächten Zeilen auskommentieren und nach dem Block iface default inet dhcp eintragen.
+
+12. Um mehrere wlan Schlüssel verschlüsselt speichern zu können braucht man folgendes:
+    1. Auf dem host PC ein Temrinal öffnen.
+    2. xargs -n 2 wpa_passphrase  ausführen
+    3. Name des Wlans eintragen - enter
+    4. Passwort des Wlans eintragen - enter
+    5. Ausgabe ist eine verschlüsselte konfiguration des Heim-Wlans
+    6. Diese Ausgabe auf dem Edison in das File /etc/wpa_supplicant/wpa_supplicant.conf anhängen und eine Zeile hinzufügen sodass das FIle so aussieht:
+        # http://www.debuntu.org/how-to-wifi-roaming-with-wpa-supplicant/
+        ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+        update_config=1
+
+        network={
+            id_str="home"
+            ssid="LeglessSpider"
+            psk=2845f6b6cca7e7051766729a65325a7c609a40659593caa2d147c40c10c4ca38
+        }
+    7. psk Eintrag #psk mit dem Klartextpasswort löschen.
+    8. Speichern.
+
+13. Wifi drivers are installed run ‘ifup wlan0’
+
+14. apt-get update
+
+15. Verbinde über ssh. --> ssh root@IP (oder ubilinux1 bzw. ubilinux2 statt IP))  Es benötigt nur noch einen USB Anschluss (den Unteren). (username: root, password: edison). 
+
+Anleitung Teil 2
+
+Link: http://wiki.ros.org/wiki/edison
+
+
+When editing your /etc/network/interfaces file, make sure to un-comment the auto wlan0 line to have wlan come up at boot.
+When you're done with those instructions, you should have a working Linux, connected via Wifi, and you should be able to ssh into.
+Here are a few more steps to make your linux experience better. Using the same login name as on other machines on your network will make ROS communications easier. Execute these commands as root:
+
+1.
+# apt-get install sudo screen
+# useradd ros
+# mkdir /home/ros
+# chown ros:users /home/jsmith
+# passwd ros  -->(passwort indigo)
+# echo "ros   ALL=(ALL:ALL) ALL" >> /etc/sudoers
+# chsh ros -s /bin/bash
+# apt-get install git
+
+1. Logout und login als ros mit passwort indigo!!
+
+Install ROS:
+1. Set up ROS repositories
+Follow Raspbery Pi instructions except for the following differences:
+
+1.1 liblz4-dev:
+
+Edit /etc/apt/sources.list and add line:
+
+deb http://http.debian.net/debian wheezy-backports main (wahrscheinlichh schon enthalten)
+
+
+Install liblz4 with:
+
+sudo apt-get update
+
+sudo apt-get install liblz4-dev
+
+##### bisher nicht gebraucht######
+1.2 console_bridge:
+
+for issues with console_bridge
+
+cd ~/ros_catkin_ws/external_src
+sudo apt-get install libboost-system-dev libboost-thread-dev
+git clone https://github.com/ros/console_bridge.git
+cd console_bridge
+cmake .
+sudo checkinstall make install
+sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo
+##################################
+
+Anleitung Teil 3
+
+Link: http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Indigo%20on%20Raspberry%20Pi
+Setup ROS Repositories
+
+Raspbian Wheezy:
+
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu wheezy main" > /etc/apt/sources.list.d/ros-latest.list'
+$ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
+
+Now, make sure your Debian package index is up-to-date:
+
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+
+Install Bootstrap Dependencies
+
+$ sudo apt-get install python-pip python-setuptools python-yaml python-argparse python-distribute python-docutils python-dateutil python-six
+$ sudo pip install rosdep rosinstall_generator wstool rosinstall
+
+### Problem:
+Die Partition für root reicht nicht und es ist nicht möglich diese zu ändern.
+Aber es ist möglich Teile des Speichers auf die Home-Partition auszulagern. Das geht folgendermaßen:
+
+    1. Rootrechte mit su erlangen oder als root einloggen.
+    2. Die sinnvollsten Ordner zum Auslagern sind /usr/lib und /usr/share
+    3. Erstelle einen ordner rootfs in /home/ -> mkdir /home/rootfs
+    4. Erstelle Unterordner usr in rootfs -> mkdir /home/rootfs/usr
+    5. Verschiebe die Ordner lib und share:
+        cd /usr/
+        mv lib /home/rootfs/usr
+        mv share /home/rootfs/usr
+    6. Erstelle Links in /usr/ nach /home/rootfs/usr
+        ln -s /home/rootfs/usr/lib lib
+        ln -s /home/rootfs/usr/share share
+    7. Von root mit exit ausloggen (Man sollte nun mit user ros weiter arbeiten)
+
+
+Initializing rosdep
+
+$ sudo rosdep init
+$ rosdep update
+Installation
+
+Now, we will download and build ROS Indigo.
+
+Create a catkin Workspace
+In order to build the core packages, you will need a catkin workspace. Create one now:
+
+
+$ mkdir ~/ros_catkin_ws
+$ cd ~/ros_catkin_ws
+
+Next we will want to fetch the core packages so we can build them. We will use wstool for this. Select the wstool command for the particular variant you want to install:
+
+ROS-Comm: (recommended) ROS package, build, and communication libraries. No GUI tools.
+
+$ rosinstall_generator ros_comm --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros_comm-wet.rosinstall
+$ wstool init src indigo-ros_comm-wet.rosinstall
+
+This will add all of the catkin or wet packages in the given variant and then fetch the sources into the ~/ros_catkin_ws/src directory. The command will take a few minutes to download all of the core ROS packages into the src folder. The -j8 option downloads 8 packages in parallel.
+
+Ros_Comm: libconsole-bridge-dev, liblz4-dev
+
+The required packages can be built from source in a new directory:
+
+$ mkdir ~/ros_catkin_ws/external_src
+$ sudo apt-get install checkinstall cmake
+$ sudo sh -c 'echo "deb-src http://mirrordirector.raspbian.org/raspbian/ testing main contrib non-free rpi" >> /etc/apt/sources.list'
+$ sudo apt-get update
+
+sudo apt-get update wird fehl schlagen: W: GPG error: http://mirrordirector.raspbian.org testing Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 9165938D90FDDD2E
+
+* Führe folgendes aus: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9165938D90FDDD2E
+
+* sudo apt-get update wiederholen
+
+libconsole-bridge-dev:
+
+$ cd ~/ros_catkin_ws/external_src
+$ sudo apt-get build-dep console-bridge
+$ apt-get source -b console-bridge
+$ sudo dpkg -i libconsole-bridge0.2*.deb libconsole-bridge-dev_*.deb
+
+The remaining dependencies should be resolved by running rosdep:
+
+$ cd ~/ros_catkin_ws
+$ rosdep install --from-paths src --ignore-src --rosdistro indigo -y -r --os=debian:wheezy
+
+Building the catkin Workspace
+Once you have completed downloading the packages and have resolved the dependencies, you are ready to build the catkin packages.
+
+Invoke catkin_make_isolated:
+
+$ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo
+
+Note: This will install ROS in the equivalent file location to Ubuntu in /opt/ros/indigo however you can modify this as you wish.
+
+$ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo -j2
+
+Now ROS should be installed! Remember to source the new installation:
+
+$ source /opt/ros/indigo/setup.bash
+$ echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+
+
+Adding Released Packages
+You may add additional packages to the installed ros workspace that have been released into the ros ecosystem. First, a new rosinstall file must be created including the new packages (Note, this can also be done at the initial install). For example, if we have installed ros_comm, but want to add ros_control and joystick_drivers, the command would be:
+
+
+$ cd ~/ros_catkin_ws
+$ rosinstall_generator ros_comm ros_control joystick_drivers --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-custom_ros.rosinstall
+You may keep listing as many ROS packages as you'd like separated by spaces.
+
+
+Next, update the workspace with wstool:
+
+$ wstool merge -t src indigo-custom_ros.rosinstall
+$ wstool update -t src
+After updating the workspace, you may want to run rosdep to install any new dependencies that are required:
+
+$ rosdep install --from-paths src --ignore-src --rosdistro indigo -y -r --os=debian:wheezy
+
+Finally, now that the workspace is up to date and dependencies are satisfied, rebuild the workspace:
+
+
+$ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo

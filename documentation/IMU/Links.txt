@@ -1,0 +1,2 @@
+http://www.seeedstudio.com/wiki/Grove_-_IMU_9DOF_v2.0
+http://www.invensense.com/products/motion-tracking/9-axis/mpu-9250/
