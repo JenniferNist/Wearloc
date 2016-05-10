@@ -123,6 +123,7 @@
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <library>
+<description>All devices needed for the wearloc interface board.</description>
 <packages>
 <package name="SSOP-8">
 <description>SSOP 8 package from Texas Instruments</description>
@@ -217,6 +218,12 @@
 <circle x="-1.016" y="3.429" radius="0.457903125" width="0.127" layer="21"/>
 <text x="-3.81" y="5.08" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.81" y="-6.35" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="L0806">
+<smd name="1" x="-0.9" y="0" dx="1" dy="1" layer="1"/>
+<smd name="2" x="0.9" y="0" dx="1" dy="1" layer="1"/>
+<text x="-1.5" y="1.1" size="0.6096" layer="25">&gt;NAME</text>
+<text x="-1.5" y="-1.7" size="0.6096" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -323,6 +330,13 @@
 <text x="-10.16" y="27.94" size="3.81" layer="104">&gt;NAME</text>
 <text x="-10.16" y="-30.48" size="3.81" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="L-EU">
+<text x="-1.4986" y="-3.81" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="3.302" y="-3.81" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.016" y1="-3.556" x2="1.016" y2="3.556" layer="94"/>
+<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PCA9306" prefix="U">
@@ -420,6 +434,26 @@ Supply range of 1.8V to 5.5V &lt;br&gt;
 <connect gate="TXB0104" pin="OE" pad="8"/>
 <connect gate="TXB0104" pin="VCCA" pad="1"/>
 <connect gate="TXB0104" pin="VCCB" pad="14"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LQH2MC" prefix="L">
+<description>&lt;b&gt;muRata chip inductor Wire Wound Type with Ferrite Core&lt;/b&gt; &lt;br&gt;
+1.0–82μH/90–595mA &lt;br&gt;
+&lt;a href="http://psearch.en.murata.com/inductor/product/LQH2MCN100K02%23.pdf"&gt;Data Sheet&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://www.murata.com/~/media/webrenewal/support/library/catalog/products/inductor/chip/o05e.ashx"&gt;Product cataloge&lt;/a&gt;</description>
+<gates>
+<gate name="LQH2MC" symbol="L-EU" x="0" y="0"/>
+</gates>
+<devices>
+<device name="N" package="L0806">
+<connects>
+<connect gate="LQH2MC" pin="1" pad="1"/>
+<connect gate="LQH2MC" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
