@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="slam" type="pseudo_frame"
+          name="pseudo_frame" output="screen"/>
+</launch>

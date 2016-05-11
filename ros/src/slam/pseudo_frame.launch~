@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="position_sensor" type="pseudo_frame"
+          name="pseudo_frame" output="screen"/>
+</launch>
