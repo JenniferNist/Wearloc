@@ -521,6 +521,22 @@
 <smd name="SHIELD2" x="0" y="-3.15595" dx="2.794" dy="1.905" layer="1" rot="R90"/>
 <text x="-1.27" y="5.715" size="1.27" layer="25">&gt;NAME</text>
 </package>
+<package name="SOT-223-5">
+<description>Microchip SOT 232 package with 5 pins &lt;br&gt;
+Pins modified for better handsoldering.</description>
+<smd name="TAB" x="0" y="3.25" dx="3.2" dy="2.5" layer="1"/>
+<smd name="3" x="0" y="-3.25" dx="2.5" dy="0.65" layer="1" rot="R90"/>
+<smd name="2" x="-1.27" y="-3.25" dx="2.5" dy="0.65" layer="1" rot="R90"/>
+<smd name="1" x="-2.54" y="-3.25" dx="2.5" dy="0.65" layer="1" rot="R90"/>
+<smd name="5" x="2.54" y="-3.25" dx="2.5" dy="0.65" layer="1" rot="R90"/>
+<smd name="4" x="1.27" y="-3.25" dx="2.5" dy="0.65" layer="1" rot="R90"/>
+<wire x1="-3.25" y1="-1.75" x2="3.25" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="3.25" y1="1.75" x2="-3.25" y2="1.75" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="1.75" x2="-3.25" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="3.25" y1="-1.75" x2="3.25" y2="1.75" width="0.127" layer="21"/>
+<text x="-3.75" y="-3.5" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5" y="-3.5" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="I2C_LEVEL_TRANSLATOR">
@@ -816,6 +832,20 @@
 <text x="-7.62" y="4.445" size="1.27" layer="97" rot="MR0">GND</text>
 <text x="-7.62" y="9.525" size="1.27" layer="97" rot="MR0">SHIELD</text>
 </symbol>
+<symbol name="ADJUSTABLE_VOLTAGE_REGULATOR_EN">
+<description>Adjustable voltage regulator with shutdown.</description>
+<wire x1="-7.62" y1="-10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<pin name="VIN" x="-12.7" y="7.62" length="middle" direction="pwr"/>
+<pin name="!SHDN" x="-12.7" y="-2.54" length="middle" direction="in"/>
+<pin name="VOUT" x="12.7" y="7.62" length="middle" direction="sup" rot="R180"/>
+<pin name="ADJ" x="12.7" y="-7.62" length="middle" direction="in" rot="R180"/>
+<pin name="GND" x="-12.7" y="-7.62" length="middle" direction="pwr"/>
+<text x="-7.62" y="12.7" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-15.24" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PCA9306" prefix="U">
@@ -1013,6 +1043,29 @@ Supply range of 1.8V to 5.5V &lt;br&gt;
 <connect gate="MICRO-USB" pin="4" pad="4"/>
 <connect gate="MICRO-USB" pin="5" pad="5"/>
 <connect gate="MICRO-USB" pin="SHIELD" pad="SHIELD1 SHIELD2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP1826" prefix="U">
+<description>&lt;b&gt;Microchip MCP1826&lt;/b&gt; &lt;br&gt;
+1000 mA, Low-Voltage, Low Quiescent Current LDO Regulator &lt;br&gt;
+Low Dropout Voltage: 250 mV Typical at 1000 mA &lt;br&gt;
+&lt;a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22057B.pdf"&gt;Data Sheet&lt;/a&gt;</description>
+<gates>
+<gate name="MCP1826" symbol="ADJUSTABLE_VOLTAGE_REGULATOR_EN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="ADJ" package="SOT-223-5">
+<connects>
+<connect gate="MCP1826" pin="!SHDN" pad="1"/>
+<connect gate="MCP1826" pin="ADJ" pad="5"/>
+<connect gate="MCP1826" pin="GND" pad="3 TAB"/>
+<connect gate="MCP1826" pin="VIN" pad="2"/>
+<connect gate="MCP1826" pin="VOUT" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6803,40 +6856,72 @@ DIN A4, landscape with location and doc. field</description>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0805"/>
-<part name="JP1" library="wearloc" deviceset="INTEL_EDISON_BB_HEADER" device=""/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
+<part name="FRAME2" library="frames" deviceset="A4L-LOC" device=""/>
+<part name="USB2" library="wearloc" deviceset="MOLEX-47346-0001" device=""/>
+<part name="U4" library="wearloc" deviceset="MCP1826" device="ADJ"/>
+<part name="JP1" library="wearloc" deviceset="INTEL_EDISON_BB_HEADER" device=""/>
 <part name="USB1" library="wearloc" deviceset="MOLEX-47346-0001" device=""/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="R10" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="C9" library="rcl" deviceset="C-EU" device="C0805K"/>
+<part name="C10" library="rcl" deviceset="C-EU" device="C0805K"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="165.1" y="10.16" size="3.81" layer="94">Jennifer Nist
+Universität Freiburg</text>
+<text x="217.17" y="20.32" size="2.1844" layer="94">Logic converters</text>
 </plain>
 <instances>
-<instance part="U1" gate="PCA9306" x="50.8" y="160.02"/>
-<instance part="U2" gate="LTC2804-1" x="33.02" y="45.72"/>
-<instance part="U3" gate="TXB0104" x="25.4" y="121.92"/>
-<instance part="C1" gate="G$1" x="68.58" y="139.7"/>
-<instance part="R1" gate="G$1" x="83.82" y="96.52"/>
-<instance part="L1" gate="LQH2MC" x="71.12" y="60.96" rot="R90"/>
-<instance part="C2" gate="G$1" x="68.58" y="129.54"/>
-<instance part="C3" gate="G$1" x="68.58" y="119.38"/>
-<instance part="C4" gate="G$1" x="68.58" y="109.22"/>
-<instance part="C5" gate="G$1" x="55.88" y="109.22"/>
-<instance part="C6" gate="G$1" x="55.88" y="119.38"/>
-<instance part="C7" gate="G$1" x="55.88" y="129.54"/>
-<instance part="C8" gate="G$1" x="55.88" y="139.7"/>
-<instance part="R2" gate="G$1" x="83.82" y="88.9"/>
-<instance part="R3" gate="G$1" x="83.82" y="81.28"/>
-<instance part="R4" gate="G$1" x="83.82" y="73.66"/>
-<instance part="R5" gate="G$1" x="71.12" y="73.66"/>
-<instance part="R6" gate="G$1" x="71.12" y="81.28"/>
-<instance part="R7" gate="G$1" x="71.12" y="88.9"/>
-<instance part="JP1" gate="J17" x="111.76" y="45.72"/>
-<instance part="JP1" gate="J18" x="142.24" y="45.72"/>
-<instance part="JP1" gate="J19" x="177.8" y="45.72"/>
-<instance part="JP1" gate="J20" x="215.9" y="45.72"/>
+<instance part="U1" gate="PCA9306" x="203.2" y="134.62"/>
+<instance part="U2" gate="LTC2804-1" x="33.02" y="114.3"/>
+<instance part="U3" gate="TXB0104" x="142.24" y="68.58"/>
+<instance part="C1" gate="G$1" x="25.4" y="165.1"/>
+<instance part="R1" gate="G$1" x="60.96" y="152.4"/>
+<instance part="L1" gate="LQH2MC" x="38.1" y="152.4" rot="R90"/>
+<instance part="C2" gate="G$1" x="38.1" y="165.1"/>
+<instance part="C3" gate="G$1" x="53.34" y="165.1"/>
+<instance part="C4" gate="G$1" x="68.58" y="165.1"/>
+<instance part="C5" gate="G$1" x="83.82" y="165.1"/>
+<instance part="C6" gate="G$1" x="231.14" y="162.56"/>
+<instance part="C7" gate="G$1" x="170.18" y="83.82"/>
+<instance part="C8" gate="G$1" x="182.88" y="83.82"/>
+<instance part="R2" gate="G$1" x="180.34" y="165.1"/>
+<instance part="R3" gate="G$1" x="180.34" y="157.48"/>
+<instance part="R4" gate="G$1" x="195.58" y="165.1"/>
+<instance part="R5" gate="G$1" x="195.58" y="157.48"/>
+<instance part="R6" gate="G$1" x="213.36" y="165.1"/>
+<instance part="R7" gate="G$1" x="175.26" y="71.12"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
-<instance part="USB1" gate="MICRO-USB" x="99.06" y="147.32"/>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+<sheet>
+<plain>
+<text x="165.1" y="10.16" size="3.81" layer="94">Jennifer Nist
+Universität Freiburg</text>
+<text x="215.9" y="20.32" size="2.1844" layer="94">Power supply and connectors</text>
+</plain>
+<instances>
+<instance part="FRAME2" gate="G$1" x="0" y="0"/>
+<instance part="USB2" gate="MICRO-USB" x="-33.02" y="144.78"/>
+<instance part="U4" gate="MCP1826" x="172.72" y="139.7"/>
+<instance part="JP1" gate="J17" x="48.26" y="40.64"/>
+<instance part="JP1" gate="J18" x="78.74" y="40.64"/>
+<instance part="JP1" gate="J19" x="114.3" y="40.64"/>
+<instance part="JP1" gate="J20" x="152.4" y="40.64"/>
+<instance part="USB1" gate="MICRO-USB" x="35.56" y="142.24"/>
+<instance part="R8" gate="G$1" x="203.2" y="152.4"/>
+<instance part="R9" gate="G$1" x="203.2" y="142.24"/>
+<instance part="R10" gate="G$1" x="203.2" y="132.08"/>
+<instance part="C9" gate="G$1" x="137.16" y="149.86"/>
+<instance part="C10" gate="G$1" x="137.16" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -6846,4 +6931,10 @@ DIN A4, landscape with location and doc. field</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
