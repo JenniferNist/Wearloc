@@ -350,7 +350,7 @@ UsedLibrary="wearloc.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 0 943 1001"
+Loc="0 0 1260 1001"
 State=2
 Number=0
 
