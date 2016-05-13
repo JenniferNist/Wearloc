@@ -1,0 +1,39 @@
+1. Edison per USB an der unteren Buchse anschließen und Booten
+2. Per SSH über das USB-Netzwerk mit der ip 192.168.2.15 verbinden
+(ssh root@192.168.2.15) pw: edison
+3. Das File /etc/wpa_supplicant/wpa_supplicant.conf editieren
+(nano /etc/wpa_supplicant/wpa_supplicant.conf)
+
+4. Für Eduroam folgendes am Ende des Files einfügen:
+network={
+   ssid="eduroam"
+   key_mgmt=WPA-EAP
+   eap=PEAP
+   anonymous_identity="anonymous@uni-freiburg.de"
+   identity="jn40@uni-freiburg.de"
+   # generate pw hash with:
+   # echo -n password_here | iconv -t utf16le | openssl md4
+   password=hash:38c701939d1dc7a6a25683385f3d55cb
+   ca_cert="/usr/share/ca-certificates/mozilla/Deutsche_Telekom_Root_CA_2.crt"
+   phase1="peaplabel=0"
+   phase2="auth=MSCHAPV2"
+}
+
+5. Für Wlan zuhause folgendes hinzufügen:
+
+network={
+        ssid="DeinWlanName"
+        # generate hashed psk with the following command on the host computer
+        # xargs -n 2 wpa_passphrase
+        psk=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+}
+
+
+6. Eventuell weitere Netze hinzufügen
+7. Mit dem Befehl service networking restart das Netzwerk neustarten
+8. Auf erfolgreiche Zuweisung einer DHCP IP warten
+DHCPREQUEST on wlan0 to 255.255.255.255 port 67
+DHCPOFFER from 141.79.19.3
+-> DHCPACK from 141.79.19.3
+
+9. Fertig!
