@@ -18,7 +18,7 @@ Benötigt:
 * Software: Ubilinux Distribution, 
 * Linux PC mit installiertem dfu-util
 
-
+################################
 Anleitung Teil 1:
 
 Go to the Emutex page and download the Ubilinux distrubtion: http://www.emutexlabs.com/ubilinux.
@@ -80,6 +80,7 @@ Die nächten Zeilen auskommentieren und nach dem Block iface default inet dhcp e
 
 15. Verbinde über ssh. --> ssh root@IP (oder ubilinux1 bzw. ubilinux2 statt IP))  Es benötigt nur noch einen USB Anschluss (den Unteren). (username: root, password: edison). 
 
+#########################################
 Anleitung Teil 2
 
 Link: http://wiki.ros.org/wiki/edison
@@ -130,6 +131,7 @@ cd console_bridge
 cmake .
 sudo checkinstall make install
 sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo
+
 ##################################
 
 Anleitung Teil 3
