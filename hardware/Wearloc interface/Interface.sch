@@ -7298,7 +7298,9 @@ Universität Freiburg</text>
 <instance part="GND10" gate="1" x="170.18" y="86.36"/>
 <instance part="GND11" gate="1" x="205.74" y="86.36"/>
 <instance part="GND12" gate="1" x="187.96" y="48.26"/>
-<instance part="P+6" gate="1" x="228.6" y="160.02"/>
+<instance part="P+6" gate="1" x="228.6" y="160.02" smashed="yes">
+<attribute name="VALUE" x="231.14" y="162.56" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7516,18 +7518,18 @@ Universität Freiburg</text>
 <junction x="43.18" y="124.46"/>
 </segment>
 <segment>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="223.52" y1="154.94" x2="223.52" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="154.94" x2="228.6" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="P+6" gate="1" pin="+5V"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="228.6" y1="152.4" x2="228.6" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="228.6" y1="154.94" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
-<junction x="228.6" y="154.94"/>
-<wire x1="223.52" y1="154.94" x2="213.36" y2="154.94" width="0.1524" layer="91"/>
-<junction x="223.52" y="154.94"/>
 <pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="228.6" y1="154.94" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="154.94" x2="213.36" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="P+6" gate="1" pin="+5V"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="223.52" y1="152.4" x2="223.52" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="154.94" x2="213.36" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="154.94" x2="228.6" y2="154.94" width="0.1524" layer="91"/>
+<junction x="223.52" y="154.94"/>
+<junction x="228.6" y="154.94"/>
 </segment>
 </net>
 <net name="N$5" class="0">
