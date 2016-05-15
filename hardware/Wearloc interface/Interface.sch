@@ -7033,12 +7033,6 @@ DIN A4, landscape with location and doc. field</description>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
-<symbol name="+3V3">
-<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="+5V" prefix="P+">
@@ -7058,19 +7052,6 @@ DIN A4, landscape with location and doc. field</description>
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="+3V3" prefix="+3V3">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="+3V3" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -7166,7 +7147,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+4.1V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+4.1V" device=""/>
-<part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="+1V1" library="wearloc" deviceset="+1V8" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="+1V2" library="wearloc" deviceset="+1V8" device=""/>
@@ -7181,7 +7161,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="+1V4" library="wearloc" deviceset="+1V8" device=""/>
-<part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
@@ -7189,6 +7168,11 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
+<part name="P+7" library="supply1" deviceset="+5V" device=""/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="P+8" library="supply1" deviceset="+5V" device=""/>
+<part name="GND15" library="supply1" deviceset="GND" device=""/>
+<part name="GND16" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7292,14 +7276,14 @@ Universität Freiburg</text>
 <instance part="+1V4" gate="G$1" x="162.56" y="99.06" smashed="yes">
 <attribute name="VALUE" x="165.1" y="101.6" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="+3V3" gate="G$1" x="215.9" y="99.06" smashed="yes">
-<attribute name="VALUE" x="218.44" y="101.6" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="GND10" gate="1" x="170.18" y="86.36"/>
 <instance part="GND11" gate="1" x="205.74" y="86.36"/>
 <instance part="GND12" gate="1" x="187.96" y="48.26"/>
 <instance part="P+6" gate="1" x="228.6" y="160.02" smashed="yes">
 <attribute name="VALUE" x="231.14" y="162.56" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P+8" gate="1" x="215.9" y="99.06" smashed="yes">
+<attribute name="VALUE" x="218.44" y="101.6" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -7413,16 +7397,6 @@ Universität Freiburg</text>
 <label x="231.14" y="132.08" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="+3V3" class="0">
-<segment>
-<pinref part="U3" gate="TXB0104" pin="VCCB"/>
-<pinref part="+3V3" gate="G$1" pin="+3V3"/>
-<wire x1="215.9" y1="96.52" x2="205.74" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="C8" gate="G$1" pin="1"/>
-<wire x1="205.74" y1="96.52" x2="193.04" y2="96.52" width="0.1524" layer="91"/>
-<junction x="205.74" y="96.52"/>
-</segment>
-</net>
 <net name="+1V8" class="0">
 <segment>
 <pinref part="+1V2" gate="G$1" pin="+1V8"/>
@@ -7531,6 +7505,14 @@ Universität Freiburg</text>
 <junction x="223.52" y="154.94"/>
 <junction x="228.6" y="154.94"/>
 </segment>
+<segment>
+<pinref part="U3" gate="TXB0104" pin="VCCB"/>
+<wire x1="215.9" y1="96.52" x2="205.74" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="96.52" x2="193.04" y2="96.52" width="0.1524" layer="91"/>
+<junction x="205.74" y="96.52"/>
+<pinref part="P+8" gate="1" pin="+5V"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -7551,14 +7533,14 @@ Universität Freiburg</text>
 <wire x1="83.82" y1="124.46" x2="83.82" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="UART_RX_LH" class="0">
+<net name="RS232_RX_LH" class="0">
 <segment>
 <pinref part="U2" gate="LTC2804-1" pin="T1OUT"/>
 <wire x1="96.52" y1="91.44" x2="99.06" y2="91.44" width="0.1524" layer="91"/>
 <label x="99.06" y="91.44" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="UART_TX_LH" class="0">
+<net name="RS232_TX_LH" class="0">
 <segment>
 <pinref part="U2" gate="LTC2804-1" pin="R1IN"/>
 <wire x1="96.52" y1="81.28" x2="99.06" y2="81.28" width="0.1524" layer="91"/>
@@ -7628,9 +7610,6 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <instance part="GND2" gate="1" x="203.2" y="127"/>
 <instance part="SUPPLY1" gate="P" x="203.2" y="149.86"/>
 <instance part="SUPPLY2" gate="P" x="215.9" y="71.12"/>
-<instance part="+3V1" gate="G$1" x="220.98" y="68.58" smashed="yes">
-<attribute name="VALUE" x="220.98" y="71.12" size="1.778" layer="96"/>
-</instance>
 <instance part="+1V1" gate="G$1" x="160.02" y="63.5" smashed="yes">
 <attribute name="VALUE" x="162.56" y="66.04" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -7642,6 +7621,12 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <instance part="P+5" gate="1" x="53.34" y="91.44" smashed="yes" rot="R270">
 <attribute name="VALUE" x="53.34" y="88.9" size="1.778" layer="96"/>
 </instance>
+<instance part="P+7" gate="1" x="172.72" y="106.68" smashed="yes">
+<attribute name="VALUE" x="175.26" y="109.22" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND14" gate="1" x="106.68" y="83.82"/>
+<instance part="GND15" gate="1" x="175.26" y="96.52"/>
+<instance part="GND16" gate="1" x="175.26" y="83.82"/>
 </instances>
 <busses>
 </busses>
@@ -7675,6 +7660,11 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <wire x1="48.26" y1="91.44" x2="50.8" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
 </segment>
+<segment>
+<pinref part="PH1_LRP" gate="JST_XH" pin="1"/>
+<wire x1="170.18" y1="104.14" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="P+7" gate="1" pin="+5V"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -7706,6 +7696,22 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <wire x1="48.26" y1="88.9" x2="50.8" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="88.9" x2="50.8" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="5"/>
+<wire x1="99.06" y1="88.9" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="88.9" x2="106.68" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="PH1_LRP" gate="JST_XH" pin="3"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+<wire x1="170.18" y1="99.06" x2="175.26" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="PH2_LRP" gate="JST_XH" pin="4"/>
+<wire x1="170.18" y1="86.36" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="GND16" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -7751,13 +7757,6 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <pinref part="JP1" gate="J20" pin="1"/>
 <pinref part="SUPPLY2" gate="P" pin="+4.1V"/>
 <wire x1="208.28" y1="68.58" x2="215.9" y2="68.58" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="+3V3" class="0">
-<segment>
-<pinref part="JP1" gate="J20" pin="2"/>
-<wire x1="208.28" y1="66.04" x2="220.98" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="+1V8" class="0">
@@ -7807,6 +7806,34 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <pinref part="PH_IMU" gate="JST_XH" pin="1"/>
 <wire x1="48.26" y1="96.52" x2="50.8" y2="96.52" width="0.1524" layer="91"/>
 <label x="50.8" y="96.52" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RS232_TX_LH" class="0">
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="3"/>
+<wire x1="99.06" y1="93.98" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
+<label x="101.6" y="93.98" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RS232_RX_LH" class="0">
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="4"/>
+<wire x1="99.06" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+<label x="101.6" y="91.44" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="UART_TX_LRP" class="0">
+<segment>
+<pinref part="PH2_LRP" gate="JST_XH" pin="3"/>
+<wire x1="170.18" y1="88.9" x2="172.72" y2="88.9" width="0.1524" layer="91"/>
+<label x="172.72" y="88.9" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="UART_RX_LRP" class="0">
+<segment>
+<pinref part="PH2_LRP" gate="JST_XH" pin="2"/>
+<wire x1="170.18" y1="91.44" x2="172.72" y2="91.44" width="0.1524" layer="91"/>
+<label x="172.72" y="91.44" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
