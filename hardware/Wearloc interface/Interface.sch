@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,17 +39,17 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -778,7 +778,7 @@ Pins modified for better handsoldering.</description>
 <text x="-3.81" y="18.415" size="1.778" layer="95">&gt;NAME</text>
 <text x="-3.81" y="-22.86" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="1" x="0" y="15.24" visible="pad" length="short" direction="nc" function="dot" rot="R180"/>
-<pin name="2" x="0" y="12.7" visible="pad" length="short" direction="sup" function="dot" rot="R180"/>
+<pin name="2" x="0" y="12.7" visible="pad" length="short" direction="pwr" function="dot" rot="R180"/>
 <pin name="3" x="0" y="10.16" visible="pad" length="short" direction="pwr" function="dot" rot="R180"/>
 <pin name="4" x="0" y="7.62" visible="pad" length="short" function="dot" rot="R180"/>
 <pin name="5" x="0" y="5.08" visible="pad" length="short" function="dot" rot="R180"/>
@@ -7147,7 +7147,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+4.1V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+4.1V" device=""/>
-<part name="+1V1" library="wearloc" deviceset="+1V8" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="+1V2" library="wearloc" deviceset="+1V8" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
@@ -7173,6 +7172,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
+<part name="+1V1" library="wearloc" deviceset="+1V8" device=""/>
+<part name="GND17" library="supply1" deviceset="GND" device=""/>
+<part name="P+9" library="supply1" deviceset="+5V" device=""/>
+<part name="GND18" library="supply1" deviceset="GND" device=""/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="1k"/>
+<part name="P+10" library="supply1" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7273,8 +7278,8 @@ Universität Freiburg</text>
 </instance>
 <instance part="GND9" gate="1" x="30.48" y="96.52"/>
 <instance part="R11" gate="G$1" x="43.18" y="101.6"/>
-<instance part="+1V4" gate="G$1" x="162.56" y="99.06" smashed="yes">
-<attribute name="VALUE" x="165.1" y="101.6" size="1.778" layer="96" rot="R180"/>
+<instance part="+1V4" gate="G$1" x="170.18" y="101.6" smashed="yes">
+<attribute name="VALUE" x="172.72" y="104.14" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND10" gate="1" x="170.18" y="86.36"/>
 <instance part="GND11" gate="1" x="205.74" y="86.36"/>
@@ -7282,8 +7287,12 @@ Universität Freiburg</text>
 <instance part="P+6" gate="1" x="228.6" y="160.02" smashed="yes">
 <attribute name="VALUE" x="231.14" y="162.56" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+8" gate="1" x="215.9" y="99.06" smashed="yes">
-<attribute name="VALUE" x="218.44" y="101.6" size="1.778" layer="96" rot="R180"/>
+<instance part="P+8" gate="1" x="205.74" y="101.6" smashed="yes">
+<attribute name="VALUE" x="208.28" y="104.14" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R12" gate="G$1" x="231.14" y="63.5" rot="R270"/>
+<instance part="P+10" gate="1" x="231.14" y="73.66" smashed="yes">
+<attribute name="VALUE" x="233.68" y="76.2" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -7427,7 +7436,7 @@ Universität Freiburg</text>
 <segment>
 <pinref part="U3" gate="TXB0104" pin="VCCA"/>
 <pinref part="+1V4" gate="G$1" pin="+1V8"/>
-<wire x1="162.56" y1="96.52" x2="170.18" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="99.06" x2="170.18" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="96.52" x2="182.88" y2="96.52" width="0.1524" layer="91"/>
 <junction x="170.18" y="96.52"/>
@@ -7507,11 +7516,16 @@ Universität Freiburg</text>
 </segment>
 <segment>
 <pinref part="U3" gate="TXB0104" pin="VCCB"/>
-<wire x1="215.9" y1="96.52" x2="205.74" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="99.06" x2="205.74" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="205.74" y1="96.52" x2="193.04" y2="96.52" width="0.1524" layer="91"/>
 <junction x="205.74" y="96.52"/>
 <pinref part="P+8" gate="1" pin="+5V"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="P+10" gate="1" pin="+5V"/>
+<wire x1="231.14" y1="71.12" x2="231.14" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -7568,6 +7582,37 @@ Universität Freiburg</text>
 <label x="205.74" y="68.58" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
+<net name="MOTOCTL" class="0">
+<segment>
+<pinref part="U3" gate="TXB0104" pin="B3"/>
+<wire x1="203.2" y1="63.5" x2="205.74" y2="63.5" width="0.1524" layer="91"/>
+<label x="205.74" y="63.5" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PWM_MOTOCTL_ED" class="0">
+<segment>
+<pinref part="U3" gate="TXB0104" pin="A3"/>
+<wire x1="172.72" y1="63.5" x2="170.18" y2="63.5" width="0.1524" layer="91"/>
+<label x="170.18" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="LH_OUT_ED" class="0">
+<segment>
+<pinref part="U3" gate="TXB0104" pin="A4"/>
+<wire x1="172.72" y1="58.42" x2="170.18" y2="58.42" width="0.1524" layer="91"/>
+<label x="170.18" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="LH_OUT" class="0">
+<segment>
+<pinref part="U3" gate="TXB0104" pin="B4"/>
+<wire x1="203.2" y1="58.42" x2="231.14" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<junction x="231.14" y="58.42"/>
+<wire x1="231.14" y1="58.42" x2="236.22" y2="58.42" width="0.1524" layer="91"/>
+<label x="236.22" y="58.42" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -7610,23 +7655,28 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <instance part="GND2" gate="1" x="203.2" y="127"/>
 <instance part="SUPPLY1" gate="P" x="203.2" y="149.86"/>
 <instance part="SUPPLY2" gate="P" x="215.9" y="71.12"/>
-<instance part="+1V1" gate="G$1" x="160.02" y="63.5" smashed="yes">
-<attribute name="VALUE" x="162.56" y="66.04" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="GND3" gate="1" x="162.56" y="55.88"/>
-<instance part="P+4" gate="1" x="101.6" y="104.14" smashed="yes">
-<attribute name="VALUE" x="104.14" y="106.68" size="1.778" layer="96" rot="R180"/>
+<instance part="P+4" gate="1" x="101.6" y="83.82" smashed="yes" rot="R180">
+<attribute name="VALUE" x="99.06" y="81.28" size="1.778" layer="96"/>
 </instance>
-<instance part="GND13" gate="1" x="50.8" y="83.82"/>
+<instance part="GND13" gate="1" x="50.8" y="86.36"/>
 <instance part="P+5" gate="1" x="53.34" y="91.44" smashed="yes" rot="R270">
 <attribute name="VALUE" x="53.34" y="88.9" size="1.778" layer="96"/>
 </instance>
 <instance part="P+7" gate="1" x="172.72" y="106.68" smashed="yes">
 <attribute name="VALUE" x="175.26" y="109.22" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND14" gate="1" x="106.68" y="83.82"/>
+<instance part="GND14" gate="1" x="109.22" y="86.36"/>
 <instance part="GND15" gate="1" x="175.26" y="96.52"/>
-<instance part="GND16" gate="1" x="175.26" y="83.82"/>
+<instance part="GND16" gate="1" x="172.72" y="83.82"/>
+<instance part="+1V1" gate="G$1" x="162.56" y="66.04" smashed="yes">
+<attribute name="VALUE" x="165.1" y="68.58" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND17" gate="1" x="147.32" y="129.54"/>
+<instance part="P+9" gate="1" x="180.34" y="96.52" smashed="yes">
+<attribute name="VALUE" x="182.88" y="99.06" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND18" gate="1" x="119.38" y="99.06" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -7650,12 +7700,6 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <junction x="157.48" y="147.32"/>
 </segment>
 <segment>
-<pinref part="PH_LH" gate="JST_XH" pin="1"/>
-<wire x1="99.06" y1="99.06" x2="101.6" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="P+4" gate="1" pin="+5V"/>
-<wire x1="101.6" y1="99.06" x2="101.6" y2="101.6" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="PH_IMU" gate="JST_XH" pin="3"/>
 <wire x1="48.26" y1="91.44" x2="50.8" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
@@ -7664,6 +7708,16 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <pinref part="PH1_LRP" gate="JST_XH" pin="1"/>
 <wire x1="170.18" y1="104.14" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="P+7" gate="1" pin="+5V"/>
+</segment>
+<segment>
+<pinref part="PH2_LRP" gate="JST_XH" pin="1"/>
+<pinref part="P+9" gate="1" pin="+5V"/>
+<wire x1="170.18" y1="93.98" x2="180.34" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="6"/>
+<wire x1="99.06" y1="86.36" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="P+4" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -7694,14 +7748,7 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <segment>
 <pinref part="PH_IMU" gate="JST_XH" pin="4"/>
 <wire x1="48.26" y1="88.9" x2="50.8" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="88.9" x2="50.8" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="PH_LH" gate="JST_XH" pin="5"/>
-<wire x1="99.06" y1="88.9" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="88.9" x2="106.68" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="GND14" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="PH1_LRP" gate="JST_XH" pin="3"/>
@@ -7710,16 +7757,26 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 </segment>
 <segment>
 <pinref part="PH2_LRP" gate="JST_XH" pin="4"/>
-<wire x1="170.18" y1="86.36" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="86.36" x2="172.72" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 </segment>
-</net>
-<net name="N$1" class="0">
 <segment>
 <pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="147.32" y1="137.16" x2="147.32" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="U4" gate="MCP1826" pin="GND"/>
 <wire x1="147.32" y1="132.08" x2="160.02" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<junction x="147.32" y="132.08"/>
+</segment>
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="5"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="99.06" y1="88.9" x2="109.22" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="2"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="99.06" y1="96.52" x2="119.38" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -7757,13 +7814,6 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <pinref part="JP1" gate="J20" pin="1"/>
 <pinref part="SUPPLY2" gate="P" pin="+4.1V"/>
 <wire x1="208.28" y1="68.58" x2="215.9" y2="68.58" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="+1V8" class="0">
-<segment>
-<pinref part="JP1" gate="J19" pin="2"/>
-<wire x1="149.86" y1="60.96" x2="160.02" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="+1V1" gate="G$1" pin="+1V8"/>
 </segment>
 </net>
 <net name="I2C_SDA_ED" class="0">
@@ -7808,37 +7858,94 @@ R1 = R2 ((Vout -Vadj)/ Vadj)
 <label x="50.8" y="96.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="RS232_TX_LH" class="0">
+<net name="+1V8" class="0">
 <segment>
-<pinref part="PH_LH" gate="JST_XH" pin="3"/>
-<wire x1="99.06" y1="93.98" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
-<label x="101.6" y="93.98" size="1.27" layer="95" xref="yes"/>
+<pinref part="JP1" gate="J19" pin="2"/>
+<wire x1="149.86" y1="60.96" x2="162.56" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="+1V1" gate="G$1" pin="+1V8"/>
+<wire x1="162.56" y1="60.96" x2="162.56" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="RS232_RX_LH" class="0">
-<segment>
-<pinref part="PH_LH" gate="JST_XH" pin="4"/>
-<wire x1="99.06" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
-<label x="101.6" y="91.44" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="UART_TX_LRP" class="0">
+<net name="UART_RX_LRP" class="0">
 <segment>
 <pinref part="PH2_LRP" gate="JST_XH" pin="3"/>
 <wire x1="170.18" y1="88.9" x2="172.72" y2="88.9" width="0.1524" layer="91"/>
 <label x="172.72" y="88.9" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="UART_RX_LRP" class="0">
+<net name="UART_TX_LRP" class="0">
 <segment>
 <pinref part="PH2_LRP" gate="JST_XH" pin="2"/>
 <wire x1="170.18" y1="91.44" x2="172.72" y2="91.44" width="0.1524" layer="91"/>
 <label x="172.72" y="91.44" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
+<net name="MOTOCTL" class="0">
+<segment>
+<pinref part="PH1_LRP" gate="JST_XH" pin="2"/>
+<wire x1="170.18" y1="101.6" x2="172.72" y2="101.6" width="0.1524" layer="91"/>
+<label x="172.72" y="101.6" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PWM_MOTOCTL_ED" class="0">
+<segment>
+<pinref part="JP1" gate="J18" pin="7"/>
+<wire x1="83.82" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+<label x="91.44" y="40.64" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="LH_OUT" class="0">
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="1"/>
+<wire x1="99.06" y1="99.06" x2="101.6" y2="99.06" width="0.1524" layer="91"/>
+<label x="101.6" y="99.06" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RS232_RX_LH" class="0">
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="3"/>
+<wire x1="99.06" y1="93.98" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
+<label x="101.6" y="93.98" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RS232_TX_LH" class="0">
+<segment>
+<pinref part="PH_LH" gate="JST_XH" pin="4"/>
+<wire x1="99.06" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+<label x="101.6" y="91.44" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="LH_OUT_ED" class="0">
+<segment>
+<pinref part="JP1" gate="J18" pin="2"/>
+<wire x1="83.82" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
+<label x="91.44" y="53.34" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="102,2,185.42,147.32,VOUT,+4.1V,,,,"/>
+<approved hash="102,2,43.18,137.16,1,+5V,,,,"/>
+<approved hash="104,1,180.34,137.16,U1,VREF1,+1V8,,,"/>
+<approved hash="104,1,210.82,137.16,U1,VREF2,N$6,,,"/>
+<approved hash="104,1,50.8,111.76,U2,VCC,+5V,,,"/>
+<approved hash="104,1,50.8,106.68,U2,VL,+1V8,,,"/>
+<approved hash="104,1,193.04,96.52,U3,VCCB,+5V,,,"/>
+<approved hash="104,1,182.88,96.52,U3,VCCA,+1V8,,,"/>
+<approved hash="104,2,160.02,147.32,U4,VIN,+5V,,,"/>
+<approved hash="204,2,27.94,48.26,JP1J17,4,,,,"/>
+<approved hash="104,2,149.86,60.96,JP1J19,2,+1V8,,,"/>
+<approved hash="104,2,149.86,58.42,JP1J19,3,GND,,,"/>
+<approved hash="104,2,208.28,68.58,JP1J20,1,+4.1V,,,"/>
+<approved hash="104,2,43.18,147.32,USB1,5,GND,,,"/>
+<approved hash="104,2,43.18,152.4,USB1,SHIELD,GND,,,"/>
+<approved hash="117,2,208.28,66.04,2,,,,,"/>
+<approved hash="113,1,130.071,89.431,FRAME1,,,,,"/>
+<approved hash="113,2,130.071,89.431,FRAME2,,,,,"/>
+<approved hash="113,2,20.1775,40.7712,JP1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
