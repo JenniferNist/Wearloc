@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -700,6 +700,39 @@ Pins modified for better handsoldering.</description>
 <text x="-1.45" y="-1.25" size="0.6096" layer="25">&gt;VALUE</text>
 <rectangle x1="-0.65" y1="-0.45" x2="-0.3" y2="0.45" layer="21"/>
 </package>
+<package name="S7B-XH-A">
+<wire x1="-9.95" y1="9.2" x2="-9.95" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-9.95" y1="9.2" x2="9.95" y2="9.2" width="0.1524" layer="21"/>
+<pad name="1" x="7.5" y="0" drill="1.016" diameter="1.6764" shape="square" rot="R90" first="yes"/>
+<pad name="2" x="5" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<text x="-8.7" y="10" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-8.7" y="-4" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="9.95" y1="9.2" x2="9.95" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-9.95" y1="-2.3" x2="-9.15" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-9.15" y1="-2.3" x2="-9.15" y2="2.2" width="0.1524" layer="21"/>
+<wire x1="-9.15" y1="2.2" x2="9.15" y2="2.2" width="0.1524" layer="21"/>
+<wire x1="9.15" y1="2.2" x2="9.15" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="9.15" y1="-2.3" x2="9.95" y2="-2.3" width="0.1524" layer="21"/>
+<pad name="3" x="2.5" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<pad name="4" x="0" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<pad name="5" x="-2.5" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<pad name="6" x="-5" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<pad name="7" x="-7.5" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+</package>
+<package name="S2B-XH-A">
+<wire x1="-3.7" y1="9.2" x2="-3.7" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-3.7" y1="9.2" x2="3.7" y2="9.2" width="0.1524" layer="21"/>
+<pad name="1" x="1.25" y="0" drill="1.016" diameter="1.6764" shape="square" rot="R90" first="yes"/>
+<pad name="2" x="-1.25" y="0" drill="1.016" diameter="1.6764" shape="octagon" rot="R90"/>
+<text x="-3.7" y="10" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.7" y="-4" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="3.7" y1="9.2" x2="3.7" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-3.7" y1="-2.3" x2="-2.9" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="-2.9" y1="-2.3" x2="-2.9" y2="2.2" width="0.1524" layer="21"/>
+<wire x1="-2.9" y1="2.2" x2="2.9" y2="2.2" width="0.1524" layer="21"/>
+<wire x1="2.9" y1="2.2" x2="2.9" y2="-2.3" width="0.1524" layer="21"/>
+<wire x1="2.9" y1="-2.3" x2="3.7" y2="-2.3" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="I2C_LEVEL_TRANSLATOR">
@@ -1106,6 +1139,31 @@ Pins modified for better handsoldering.</description>
 <pin name="+" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
 <pin name="-" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
 </symbol>
+<symbol name="7PIN_HEADER">
+<description>Header 6 pin</description>
+<wire x1="2.54" y1="-10.16" x2="2.54" y2="10.16" width="0.254" layer="94"/>
+<wire x1="2.54" y1="10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="10.16" x2="-5.08" y2="-10.16" width="0.254" layer="94"/>
+<text x="2.54" y="-12.7" size="1.27" layer="95" rot="MR0">&gt;NAME</text>
+<pin name="1" x="5.08" y="7.62" length="short" direction="pas" rot="R180"/>
+<pin name="2" x="5.08" y="5.08" length="short" direction="pas" rot="R180"/>
+<pin name="3" x="5.08" y="2.54" length="short" direction="pas" rot="R180"/>
+<pin name="4" x="5.08" y="0" length="short" direction="pas" rot="R180"/>
+<pin name="5" x="5.08" y="-2.54" length="short" direction="pas" rot="R180"/>
+<pin name="6" x="5.08" y="-5.08" length="short" direction="pas" rot="R180"/>
+<wire x1="-5.08" y1="-10.16" x2="2.54" y2="-10.16" width="0.254" layer="94"/>
+<pin name="7" x="5.08" y="-7.62" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="2PIN_HEADER">
+<description>Header 2 Pin</description>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<text x="2.54" y="-5.08" size="1.27" layer="95" rot="MR0">&gt;NAME</text>
+<pin name="1" x="5.08" y="2.54" length="short" direction="pas" rot="R180"/>
+<pin name="2" x="5.08" y="0" length="short" direction="pas" rot="R180"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PCA9306" prefix="U">
@@ -1489,6 +1547,59 @@ battery holder for 1220 batteries&lt;br&gt;
 <connects>
 <connect gate="RB520CS30L" pin="A" pad="A"/>
 <connect gate="RB520CS30L" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="S7B-XH-A" prefix="J">
+<description>&lt;b&gt;Wire-to-Board 2.5mm pitch side mount connector&lt;/b&gt;
+&lt;p&gt;
+Source:
+&lt;ul&gt;
+&lt;li&gt;http://www.jst-mfg.com/product/pdf/eng/eXH.pdf&lt;/li&gt;
+&lt;li&gt;http://www.jst-mfg.com/product/detail_e.php?series=277&lt;/li&gt;
+&lt;ul&gt;
+&lt;/p&gt;</description>
+<gates>
+<gate name="JST_XH" symbol="7PIN_HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="90°" package="S7B-XH-A">
+<connects>
+<connect gate="JST_XH" pin="1" pad="1"/>
+<connect gate="JST_XH" pin="2" pad="2"/>
+<connect gate="JST_XH" pin="3" pad="3"/>
+<connect gate="JST_XH" pin="4" pad="4"/>
+<connect gate="JST_XH" pin="5" pad="5"/>
+<connect gate="JST_XH" pin="6" pad="6"/>
+<connect gate="JST_XH" pin="7" pad="7"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="S2B-XH-A" prefix="J">
+<description>&lt;b&gt;Wire-to-Board 2.5mm pitch side mount connector&lt;/b&gt;
+&lt;p&gt;
+Source:
+&lt;ul&gt;
+&lt;li&gt;http://www.jst-mfg.com/product/pdf/eng/eXH.pdf&lt;/li&gt;
+&lt;li&gt;http://www.jst-mfg.com/product/detail_e.php?series=277&lt;/li&gt;
+&lt;ul&gt;
+&lt;/p&gt;</description>
+<gates>
+<gate name="JST_XH" symbol="2PIN_HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="90°" package="S2B-XH-A">
+<connects>
+<connect gate="JST_XH" pin="1" pad="1"/>
+<connect gate="JST_XH" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
