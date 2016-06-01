@@ -1,0 +1,6 @@
+[submodule "libraries/i2c_imu"]
+	path = libraries/i2c_imu
+	url = ../../jeskesen/i2c_imu.git
+[submodule "libraries/RTIMULib"]
+	path = libraries/RTIMULib
+	url = ../../richards-tech/RTIMULib.git
