@@ -1,0 +1,27 @@
+Intel Edison Stand 14.06.2016:
+
+https://github.com/SkRobo/rplidar
+--> Auf den Edison geklont. Es können Daten vom PRLidar gelesen und ausgegeben werden.
+
+https://github.com/richards-tech/RTIMULib
+--> Auf den Edison geklont. Die Imu kann unter Anderem ausgelesen und kalibriert werden.
+
+Fehlt noch:
+https://github.com/jeskesen/i2c_imu
+--> Sollte noch auf den Edison geklont werden.
+
+Roscore funktioniert.
+
+
+Hinweise:
+* Der Hokuyo und der RoboPiek werden beide über den selben Port /dev/ttyMFD1 angesprochen - in der Software muss daher unterscheiden werden, welcher Sensor dran ist! Die HW wird das nicht erkennen (der Schalter schaltet nur das Signal auf die unterschiedlichen Stecker).
+
+* Der Anschlussder IMU ist: i2c-1 
+
+* Bitte am Ende den Edison IMMER mit "shutdown -h now" runterfahren. Sobald die LED auf dem Edison (links) aus ist, können die Kabel gezogen werden.
+
+* Wenn man nicht über ssh ros@ubilinux1 oder 2 zugreifen kann, kann die IP Adresse über den seriellen Port ausgelesen werden.
+Dazu einfach ein zweites USB Kabel oben rechts an den Edison anhängen und über Putty mit seriellem Anschluss /dev/ttyUSB0 mit 115200 Baud aufrufen.
+Enter drücken! Anmelden! (NN: root, PW: edison oder NN: ros, PW: indigo)
+Dann kann über "ifconfig wlan0" die IP ausgelesen werden.
+USB Kabel wieder abstecken und "ssh ros@IP" aufrufen.
