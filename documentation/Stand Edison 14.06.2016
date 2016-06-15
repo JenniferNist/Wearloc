@@ -2,7 +2,7 @@ Intel Edison Stand 14.06.2016:
 
 https://github.com/SkRobo/rplidar
 --> Auf den Edison geklont. Es können Daten vom PRLidar gelesen und ausgegeben werden.
---> z.B "python .py out.txt"
+--> z.B "python record_measurments.py out.txt"
 
 https://github.com/richards-tech/RTIMULib
 --> Auf den Edison geklont. Die Imu kann unter Anderem ausgelesen und kalibriert werden.
