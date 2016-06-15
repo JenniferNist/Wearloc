@@ -2,7 +2,7 @@ Intel Edison Stand 14.06.2016:
 
 https://github.com/SkRobo/rplidar
 --> Auf den Edison geklont. Es können Daten vom PRLidar gelesen und ausgegeben werden.
---> z.B "python test.py out.txt"
+--> z.B "python .py out.txt"
 
 https://github.com/richards-tech/RTIMULib
 --> Auf den Edison geklont. Die Imu kann unter Anderem ausgelesen und kalibriert werden.
@@ -16,7 +16,7 @@ Roscore funktioniert.
 
  
 Hinweise:
-* Der Hokuyo und der RoboPiek werden beide über den selben Port /dev/ttyMDF1 angesprochen - in der Software muss daher unterscheiden werden, welcher Sensor dran ist! Die HW wird das nicht erkennen (der Schalter schaltet nur das Signal auf die unterschiedlichen Stecker).
+* Der Hokuyo und der RoboPiek werden beide über den selben Port /dev/ttyMFD1 angesprochen - in der Software muss daher unterscheiden werden, welcher Sensor dran ist! Die HW wird das nicht erkennen (der Schalter schaltet nur das Signal auf die unterschiedlichen Stecker).
 
 * Der Anschlussder IMU ist: i2c-1 
 
