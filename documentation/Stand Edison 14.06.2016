@@ -29,7 +29,7 @@ Dann kann über "ifconfig wlan0" die IP ausgelesen werden.
 USB Kabel wieder abstecken und "ssh ros@IP" aufrufen.
 
 * Wenn i2c nicht geöffnet werden kann:
-ind /dev/ "sudo chmod a+rw /dev/i2c-*" ausführen um die Rechte zu vergeben (leider nicht permanent bisher)
+ind /dev/ "sudo chmod a+rw /dev/i2c-*" ausführen um die Rechte zu vergeben
 
 
 
