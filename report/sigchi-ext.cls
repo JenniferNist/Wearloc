@@ -281,11 +281,11 @@
       \endgroup\par
     \fi
 
-%    \vfil
-%    
-%    % ... and ACM copyright
-%    \rule{\columnwidth}{0.5pt}
-%    {\scriptsize\@copyrightinfo \\}
+    \vfil
+    
+    % ... and ACM copyright
+    \rule{\columnwidth}{0.5pt}
+    {\scriptsize\@copyrightinfo \\}
   \end{minipage}
 
   % avoid title overlapping with abstract 

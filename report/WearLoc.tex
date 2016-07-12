@@ -99,6 +99,10 @@ The Hokuyo laser-scanner has a 240 degree measurement radius. The scan range exp
 The Grove-IMU 9DOF v2.0 features a gyroscope, a magnetometer and a accelerometer. We use the Grove-IMU in both our setups to measure the bearing of the laser-scanners to track the users rotation. Furthermore it helps to better predict our location.
 \section{Software}
 ROS hector-SLAM
+%\begin{figure}
+%  \includegraphics[width=0.9\columnwidth]{figures/sigchi-logo}
+%  \caption{Insert a caption below each figure.}~\label{fig:sample}
+%\end{figure}
 \section{Setup 1}
 Our first setup consists of the Raspberry PI, the Grove-IMU and the RPLIDAR. We chose to work on this setup because we waited for our circuit board for the Intel Edison to be finished. This allowed us to get familiar with the hardware and the hector-SLAM packages for ROS. The Raspberry PI is very user-friendly and allowed a fast entry into the topic.\\
 In this setup the ROS packages for the individual hardware parts, together with hector-SLAM, run on the Raspberry PI. The map data is then send to a external device, like a laptop, via Wifi.\\ 
