@@ -1,0 +1,122 @@
+\documentclass{sigchi-ext}
+% Please be sure that you have the dependencies (i.e., additional
+% LaTeX packages) to compile this example.
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[scaled=.92]{helvet} % for proper fonts
+\usepackage{graphicx} % for EPS use the graphics package instead
+\usepackage{balance}  % for useful for balancing the last columns
+\usepackage{booktabs} % for pretty table rules
+\usepackage{ccicons}  % for Creative Commons citation icons
+\usepackage{ragged2e} % for tighter hyphenation
+
+% Some optional stuff you might like/need.
+% \usepackage{marginnote} 
+% \usepackage[shortlabels]{enumitem}
+% \usepackage{paralist}
+% \usepackage[utf8]{inputenc} % for a UTF8 editor only
+
+% Paper metadata (use plain text, for PDF inclusion and later
+% re-using, if desired).  Use \emtpyauthor when submitting for review
+% so you remain anonymous.
+\def\plaintitle{WearLoc: A Wearable Indoor Localization Device} \def\plainauthor{Rick Gelhausen, Jennifer Nist, Lukas Gemein, David Speck
+  , Andre Biedenkapp}
+\def\emptyauthor{}
+\def\plainkeywords{Authors' choice; of terms; separated; by
+  semicolons; include commas, within terms only; required.}
+\def\plaingeneralterms{Documentation, Standardization}
+
+\title{WearLoc: A Wearable Indoor Localization Device}
+
+\numberofauthors{6}
+% Notice how author names are alternately typesetted to appear ordered
+% in 2-column format; i.e., the first 4 autors on the first column and
+% the other 4 auhors on the second column. Actually, it's up to you to
+% strictly adhere to this author notation.
+\author{%
+  \alignauthor{%
+    \textbf{Lukas Gemein}\\
+%    \affaddr{Software Installation Elf (SIE)}\\
+    \email{gemeinl@cs.uni-freiburg.de} }\alignauthor{%
+    \textbf{Jennifer Nist}\\
+%    \affaddr{CEO}\\
+    \email{nistj@cs.uni-freiburg.de} } \vfil \alignauthor{%
+    \textbf{Rick Gelhausen}\\
+%    \affaddr{Senior Designer}\\
+    \email{rick.gelhausen@gmail.com} }\alignauthor{%
+    \textbf{David Speck}\\
+%    \affaddr{Slave Master}\\
+    \email{speckd@cs.uni-freiburg.de} } \vfil \alignauthor{%
+    \textbf{Andre Biedenkapp}\\  
+%    \affaddr{Who whoms task shall not be named}  
+    \email{biedenka@cs.uni-freiburg.de}}} 
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+  pdftitle={\plaintitle},
+%  pdfauthor={\plainauthor},
+  pdfauthor={\emptyauthor},
+  pdfkeywords={\plainkeywords},
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=linkColor,
+  breaklinks=true,
+}
+
+% \reversemarginpar%
+
+\begin{document}
+
+\maketitle
+
+% Uncomment to disable hyphenation (not recommended)
+% https://twitter.com/anjirokhan/status/546046683331973120
+\RaggedRight{} 
+
+\section{Introduction}
+Fire-fighters and other rescue teams often have to roam through burning buildings or tunnels to find and rescue survivors of a tragic event. Thereby they enter unmapped environments and it can be hard not to lose the orientation or to share the location of a survivor to other members of the team. Even if the rescue team has maps of a building, ways can be blocked due to cave-ins. It would be desirable to create maps of the surroundings that are up-to-date. This could make the work for rescue teams easier and safer.\\
+Another area of application for such a map generating device would be the mapping of caves, to simplify and secure the work of cave-explorers.\\
+There are approaches like hector-SLAM to create live-maps. In the Wearable Computing Systems lab course, we tried two different approaches to create a wearable device running hector-SLAM to create live-maps. The main difference of the approaches lie in the hardware we used. Our first approach was using a raspberry PI and the RPLIDAR to get the system working. In a second step we tried to create a smaller version using an Intel Edison and the Hokuyo laser-scanner.\\
+\newpage
+\section{Hardware}
+In our attempt to create a wearable device we used several hardware components.
+\subsection{Raspberry Pi}
+The Raspberry PI 2 Model B features a 900MHz quad-core CPU. We use the raspberry pi in our first setup to run the entire software and send the resulting map data to an external device to display the map.
+\subsection{Intel Edison}
+The Intel Edison features a 500MHz CPU. We use the Intel Edison in our second approach. It is used to run the packages for our IMU and laser-scanner. The laser and IMU data is then send to an external device.
+\subsection{Laser-Scanner Robo Peak}
+The RPLIDAR is a 360 degree 2D laser-scanner system. The scan range expands from 0.2 to 6m. Due to its huge rotating part and the associate motor, the RPLIDAR is quite big for wearable device, having a surface of about 70x100 $mm^2$. We use it in our first setup mounted on a portable platform.
+\subsection{Laser-Scanner Hokuyo}
+The Hokuyo laser-scanner has a 240 degree measurement radius. The scan range expands from 0.02 to 4m With its 40x40 $mm^2$ surface it is ideal to be mounted on a GoPro holder, which allows hundreds of different possible wearable designs.
+\subsection{Grove-IMU}
+The Grove-IMU 9DOF v2.0 features a gyroscope, a magnetometer and a accelerometer. We use the Grove-IMU in both our setups to measure the bearing of the laser-scanners to track the users rotation. Furthermore it helps to better predict our location.
+\section{Software}
+ROS hector-SLAM
+%\begin{figure}
+%  \includegraphics[width=0.9\columnwidth]{figures/sigchi-logo}
+%  \caption{Insert a caption below each figure.}~\label{fig:sample}
+%\end{figure}
+\section{Setup 1}
+Our first setup consists of the Raspberry PI, the Grove-IMU and the RPLIDAR. We chose to work on this setup because we waited for our circuit board for the Intel Edison to be finished. This allowed us to get familiar with the hardware and the hector-SLAM packages for ROS. The Raspberry PI is very user-friendly and allowed a fast entry into the topic.\\
+In this setup the ROS packages for the individual hardware parts, together with hector-SLAM, run on the Raspberry PI. The map data is then send to a external device, like a laptop, via Wifi.\\ 
+As we are trying to create a wearable device, the disadvantage of this approach is the size of the Raspberry PI and the RP Lidar. Our main idea is to mount everything on a small platform with a handle. Like this we can hold the entire device with one hand. This is not very efficient for a rescue-team, as they will need both hands for other tasks.
+\section{Setup 2}
+Our second approach uses the Intel Edison, the Grove-IMU and the Hokuyo laser-scanner.
+In this setup the ROS packages for the laser-scanner and the IMU run on the Intel Edison and the data is send to a laptop via Wifi. In this case hector-SLAM runs on the laptop.
+In comparison to the the first setup, this approach is very compact. The laser-scanner is small enough to be mounted on a platform that can be attached to GoPro-Camera holders. This allows us many different options to make our setup wearable. One way would be to attach the Scanner on a helmet, like a helmet lamp. Like this both hands are free for other tasks.
+
+
+
+\balance{} 
+
+%\bibliographystyle{SIGCHI-Reference-Format}
+%\bibliography{sample}
+
+\end{document}

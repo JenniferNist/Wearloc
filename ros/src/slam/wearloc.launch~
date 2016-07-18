@@ -2,8 +2,8 @@
 
 <launch>
   <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">
-    <param name="base_frame" value="map" />
-    <param name="odom_frame" value="map"/>
+    <param name="base_frame" value="laser" />
+    <param name="odom_frame" value="laser"/>
     <param name="output_timing" value="false"/>
 
     <param name="use_tf_scan_transformation" value="true"/>
