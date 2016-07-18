@@ -1,0 +1,77 @@
+USB-Stick an OTG anschließen:
+
+
+0. Vorbereitung:
+	a. Einen Stick (mit mehr als 4 GB Kapazität) am PC mit EXT4 formatieren.
+
+
+1. WICHTIG: Edison vom Board entfernen!!! (Sonst Kurzschluss)
+	a. Der Edison darf wärend des Backup- und Restorevorgangs nicht vom Strom getrennt werden!
+		Sonst ist der Edison kaputt!
+	b. Während der Prozur darf immer nur ein Edison an und im WLAN sein! 
+		Sonst gibt es überschneidungen mit den Hostnamen.
+
+
+2. Stomversorgung:
+	a. Strom mit 12V Netzteil an Header J21 (Unterhalb der OTG-Buchse) so anschließen, 
+		dass Minus zur Board-Außenseite Zeigt, und Plus auf die Board-Innenseite Zeigt 
+		(mit 2 Markierter PIN).
+	b. Netzteil Einstecken.
+	c. Edison sollte jetzt booten.
+
+
+3. Edison vorbereiten:
+	a. Micro-USB Kabel an Serieller Schnittstelle (obere Buchse) mit PC verbinden.
+	b. Serielle Schnittstelle über Putty (wie in Stand Edison 14.6.2016 beschrieben) öffnen.
+	c. Datum mit z.B.: date -s "18 July 15:00" setzen.
+	d. Kabel der Seriellen Schittstelle entfernen.
+	e. Über SSh nach root@ubilinux1/2 bzw. root@IP verbinden. 
+		Hinweis: Bitte unbedingt als root anmelden!
+
+
+4. Stick vorbereiten und anschließen:
+	a. An OTG-Buchse (untere Buchse) USB-Stick mit Adaper anschließen. 
+		Bitte keine weiteren Geräte anschließen!!
+	b. Mit dmesg müsste u.A. "new USB device found" und wenn der USB-Stick erkannt wurde,
+		wird "attached SCSI generic .." ausgegeben. 
+	c. Mit dem Befehl: "lsusb" müssten zwei Linuxfoundation 2.0 und 3.0 root hub 
+		Einträge erscheinen.	
+	d. Mit angestecktem Stick sollte mit "lsusb" noch ein weiterer Eintrag 
+		"Verbatim, LTD" auftauchen.
+
+
+5. USB-Stick mounten: 
+	a. Wechse mit "cd /mnt/" in das Verzeichnis mnt.
+	b. Erstelle dort das Verzeichnis "usbdrive".
+	c. Mount den USB-Stick mit "mount /dev/sda1 /mnt/usbdrive"
+	
+
+6. Image erstellen:
+	a. Mit dem Befehl: "dd bs=4M if=/dev/mmcblk0 of=/mnt/usbdrive/Edison_backup.img" 
+		das Image erstellen. Dies kann einige Zeit (5-10 Minuten) dauern.
+	b. Das Image ist fertig, wenn dd mit der Ausgabe "(3.9 GB) copied" endet.
+	c. Wenn der Stick aufhört zu blinken ist er wirklich fertig. 
+	d. Stick mit dem Befehl"umout /mnt/usbdrive/" unmounten.
+
+
+7. Restore auf Edison ubilinux1:
+	a. Führe Punkt 1-5 auf Edison uilinux1 aus.
+	b. Gehe nach "/mnt/usbdrive" und führe "ls" aus. 
+		Das zuvor erstellte Backup-File müsste nun aufgelistet werden.
+	c. Führe den Befehl: "dd bs=4M if=/mnt/usbdrive/Edison_backup.img of=/dev/mmcblk0" aus.
+		Dies kann einige Zeit (5-10 Minuten) dauern.
+	d. Stick mit dem Befehl"umout /mnt/usbdrive/" unmounten.
+	e. Mit dem Befehl: "reboot" das System neu starten und mit root anmelden.
+
+
+8. Edison ubilinux1:
+	a. Hostnamen von ubilinux2 auf ubilinux1 ändern!
+	b. In dem File mit: "nano /etc/hostname" auf ubilinux1 ändern.
+	c. In dem File mit: "nano /ect/hosts" alle Einträge auf ubilinux1 ändern. 
+
+
+Hinweise: 
+- Der Stick wird erst als neu angeschlossen erkannt, wenn erst der Adapter ohne Stick 
+	neu angeschlossen wird und dann erst der Stick an den Adapter.
+
+
