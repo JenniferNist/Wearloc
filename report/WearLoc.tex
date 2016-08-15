@@ -93,8 +93,7 @@ The Hokuyo laser-scanner has a 240 degree measurement radius. The scan range exp
 \subsection{Grove-IMU}
 The Grove-IMU 9DOF v2.0 features a gyroscope, a magnetometer and a accelerometer. We use the Grove-IMU in both our setups to measure the bearing of the laser-scanners to track the users rotation. Furthermore it helps to better predict our location.
 \section{Software}
-ROS hector-SLAM
-%TODO add software part
+Our entire project is based on the ROS package for hector-SLAM created by a team of the University of Darmstadt. We run a ROS-core on a laptop, together with the hector-slam package. The packages required for reading the data from the sensors run on the Intel Edison. In our first attempt using the Raspberry PI we ran everything on the Raspberry and transferred the map data to a laptop. Now we send the data from the sensors to the laptop and build the map there. 
 \section{Approach 1}
 In our first approach, we used the Raspberry PI, the Grove-IMU and the RPLIDAR. We chose to work on this approach because we waited for our circuit board for the Intel Edison to be finished. This allowed us to get familiar with the hardware and the hector-SLAM packages for ROS. The Raspberry PI is very user-friendly and allowed a fast entry into the topic.\\
 In this approach the ROS packages for the individual hardware parts, together with hector-SLAM, run on the Raspberry PI. The map data is then send to a external device, like a laptop, via Wifi.\\ 
@@ -112,11 +111,9 @@ Another setup we created using the RP Lidar, is a portable platform on which all
 %\end{figure}
 \section{Results}
 We managed to obtain satisfying results using our second approach. We noticed that, even though the resolution of the Hokuyo laser-scanner is better than the resolution of the RP lidar, we have better results using the RP lidar. The disadvantage of the Hokuyo is the limited range of maximum 4 meters. The RP lidar has a range of 5.5 meters and therefore returns more reference points to estimate its location. Using a laser-scanner with even higher range, we could significantly improve our results.
-%TODO ADD Result pictures and explanation
-
 \begin{figure}
 	\includegraphics[width=0.9\columnwidth]{51.png}
-	\caption{Insert a caption below each figure.}~\label{fig:sample}
+	\caption{University of Freiburg. Mapped overlay of Building 51}~\label{fig:sample}
 \end{figure}
 %\bibliographystyle{SIGCHI-Reference-Format}
 %\bibliography{sample}
