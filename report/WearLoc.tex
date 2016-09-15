@@ -105,7 +105,7 @@ Both the Raspberry Pi and the Intel Edison run the Robot Operating System (ROS),
   \caption{Live visualization of a SLAM run in rviz.}~\label{fig:software}
 \end{figure*}
 
-\section{Wearbale v1}
+\section{Wearable v1}
 In our first version we used the Raspberry PI, the IMU and the RPLIDAR laser scanner. We chose to start with the Raspberry Pi, since it offers an easy start due to its numerous ports to connect other devices. The IMU was connected using the I2C GPIO pins of the Raspberry Pi whereas the laser scanner could easily be connected through a USB port. This fast setup allowed us to get familiar with the use of the IMU and the RPLIDAR, have a look at raw data and already start adapting the code. Finally, the Raspberry Pi runs all Software components itself, including the packages for IMU and RPLIDAR as well as the SLAM approach. The map is wirelessly transferred to a laptop which is used for visualization. All the hardware components are mounted onto a wooden plate which is screwed on a aluminium table leg for the purpose of holding the device (Figure~\ref{fig:v1}). A powerbank with 2.1A powers the system. Since the Raspberry Pi and the laser scanner are relatively big this version is not quite as handy which is why we created a second version. Note, that apart from small adjustments the Raspberry Pi and the Intel Edison are interchangeable.
 
 \begin{figure}
